@@ -1,3 +1,9 @@
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { HomePageComponent } from './home-page/home-page.component';
 
-export const routes: Routes = [];
+const appRoutes: Routes = [
+  { path: '', component: HomePageComponent },
+  { path: '**', redirectTo: '/' }, // Wildcard route for unknown URLs
+];
+
+export const routing = RouterModule.forRoot(appRoutes);
