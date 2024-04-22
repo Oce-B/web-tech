@@ -1,0 +1,74 @@
+.header {
+  .mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+
+    &__logo {
+      flex: 0 0 auto;
+    }
+
+    &__logo-icon {
+      font-size: 24px; // Set the font-size as you desire
+    }
+
+    &__nav {
+      flex: 1 1 auto;
+      margin: 0 20px;
+    }
+
+    &__nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__nav-item {
+      margin: 0;
+    }
+
+    &__nav-link {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ccc;
+      }
+    }
+
+    &__profile {
+      flex: 0 0 auto;
+    }
+
+    &__profile-link {
+      display: inline-block;
+
+      &:hover .header__profile-icon {
+        transform: scale(1.1);
+      }
+    }
+
+    &__profile-icon {
+      font-size: 40px; // Set the font-size as you desire
+      transition: transform 0.3s ease;
+    }
+
+    // Media Query for Mobile
+    @media only screen and (max-width: 768px) {
+      .mat-toolbar {
+        flex-direction: column;
+
+        &__nav {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
