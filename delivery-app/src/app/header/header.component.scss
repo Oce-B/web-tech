@@ -1,5 +1,5 @@
 .header {
-  .mat-toolbar {
+  .header__toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -7,65 +7,65 @@
     color: #fff;
     padding: 20px;
 
-    &__logo {
+    .header__logo {
       flex: 0 0 auto;
+
+      .header__logo-icon {
+        font-size: 24px; // Set the font-size as you desire
+      }
     }
 
-    &__logo-icon {
-      font-size: 24px; // Set the font-size as you desire
-    }
-
-    &__nav {
+    .header__nav {
       flex: 1 1 auto;
       margin: 0 20px;
-    }
 
-    &__nav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: space-between;
-    }
+      .header__nav-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
 
-    &__nav-item {
-      margin: 0;
-    }
+        .header__nav-item {
+          margin: 0;
 
-    &__nav-link {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px;
-      transition: color 0.3s ease;
+          .header__nav-link {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
 
-      &:hover {
-        color: #ccc;
+            &:hover {
+              color: #ccc;
+            }
+          }
+        }
       }
     }
 
-    &__profile {
+    .header__profile {
       flex: 0 0 auto;
-    }
 
-    &__profile-link {
-      display: inline-block;
+      .header__profile-link {
+        display: inline-block;
 
-      &:hover .header__profile-icon {
-        transform: scale(1.1);
+        &:hover .header__profile-icon {
+          transform: scale(1.1);
+        }
       }
-    }
 
-    &__profile-icon {
-      font-size: 40px; // Set the font-size as you desire
-      transition: transform 0.3s ease;
+      .header__profile-icon {
+        font-size: 40px; // Set the font-size as you desire
+        transition: transform 0.3s ease;
+      }
     }
 
     // Media Query for Mobile
     @media only screen and (max-width: 768px) {
-      .mat-toolbar {
+      .header__toolbar {
         flex-direction: column;
 
-        &__nav {
+        .header__nav {
           margin-top: 20px;
         }
       }
