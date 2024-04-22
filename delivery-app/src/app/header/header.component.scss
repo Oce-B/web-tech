@@ -9,10 +9,6 @@
 
     .header__logo {
       flex: 0 0 auto;
-
-      .header__logo-icon {
-        font-size: 24px; // Set the font-size as you desire
-      }
     }
 
     .header__nav {
@@ -55,12 +51,11 @@
       }
 
       .header__profile-icon {
-        font-size: 40px; // Set the font-size as you desire
+        font-size: 40px;
         transition: transform 0.3s ease;
       }
     }
 
-    // Media Query for Mobile
     @media only screen and (max-width: 768px) {
       .header__toolbar {
         flex-direction: column;
