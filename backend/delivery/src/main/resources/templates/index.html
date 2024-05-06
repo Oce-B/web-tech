@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant List</title>
+</head>
+<body>
+<h1>Restaurant List</h1>
+<ul id="restaurant-list"></ul>
+
+<script>
+    // Function to fetch restaurants from the backend
+    async function fetchRestaurants() {
+        try {
+            const response = await fetch('/restaurants'); // Assuming your backend is running on the same host
+            const restaurants = await response.json();
+            return restaurants;
+        } catch (error) {
+            console.error('Error fetching restaurants:', error);
+            return [];
+        }
+    }
+
+    // Function to render restaurants on the page
+    async function renderRestaurants() {
+        const restaurantList = document.getElementById('restaurant-list');
+        const restaurants = await fetchRestaurants();
+
+        restaurants.forEach(restaurant => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${restaurant.name} - ${restaurant.address}`;
+            restaurantList.appendChild(listItem);
+        });
+    }
+
+    // Call renderRestaurants when the page loads
+    window.onload = renderRestaurants;
+</script>
+</body>
+</html>
