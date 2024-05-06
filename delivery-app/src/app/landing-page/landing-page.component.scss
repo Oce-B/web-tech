@@ -1,69 +1,13 @@
 @import url("../../assets/styles/variables.scss");
 
 $color-green: #b6d83d;
-.test {
-  color: red;
-  border: solid 5px black;
-}
 
 .button__rounded--black {
-  border-radius: 50px;
-  background-color: black;
-  color: $color-green;
-  font-size: 16px;
-  padding: 10px;
+  background-color: black !important;
+  color: $color-green !important;
   margin: 5px;
-  min-width: 10em;
-  &:hover {
+  s &:hover {
     background-color: $color-green;
     color: black;
-  }
-}
-
-.break {
-  flex-basis: 100%;
-  height: 0;
-}
-.restaurant-card {
-  background-color: white;
-  border-radius: 30px;
-  width: 350px;
-  height: 150px;
-  margin: 10px;
-
-  &__title {
-    color: #000;
-    font-family: Poppins;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-  }
-  &__description {
-    padding: 10px;
-    font-size: 14px;
-    color: grey;
-    display: unset;
-    flex-shrink: 0;
-  }
-  &__type {
-    padding: 10px;
-    border-radius: 50px;
-    color: white;
-    background-color: $color-green;
-  }
-  &__image-container {
-    overflow: hidden;
-    width: 100px;
-    height: 120px;
-    padding: 15px;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
-    }
   }
 }

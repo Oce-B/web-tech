@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1",
+    "name": "Tasty Grill",
+    "type": ["American", "Barbecue"],
+    "description": "Serving delicious grilled dishes",
+    "address": "123 Main Street",
+    "rating": 4.5,
+    "dishes": [
+      {
+        "id": "1",
+        "name": "Grilled Chicken",
+        "price": 10.99
+      },
+      {
+        "id": "2",
+        "name": "BBQ Ribs",
+        "price": 15.99
+      }
+    ],
+    "photos": ["assets/img/food.jpg"]
+  },
+  {
+    "id": "2",
+    "name": "Italiano Pizzeria",
+    "type": ["Italian", "Pizza"],
+    "description": "Authentic Italian pizza and pasta",
+    "address": "456 Elm Street",
+    "rating": 4.2,
+    "dishes": [
+      {
+        "id": "1",
+        "name": "Margherita Pizza",
+        "price": 12.99
+      },
+      {
+        "id": "2",
+        "name": "Spaghetti Carbonara",
+        "price": 11.99
+      }
+    ],
+    "photos": ["assets/img/food.jpg"]
+  },
+  {
+    "id": "3",
+    "name": "Sushi Heaven",
+    "type": ["Japanese", "Sushi"],
+    "description": "Fresh and delicious sushi rolls",
+    "address": "789 Oak Street",
+    "rating": 4.7,
+    "dishes": [
+      {
+        "id": "1",
+        "name": "California Roll",
+        "price": 9.99
+      },
+      {
+        "id": "2",
+        "name": "Sashimi Platter",
+        "price": 18.99
+      }
+    ],
+    "photos": ["assets/img/food.jpg"]
+  },
+  {
+    "id": "4",
+    "name": "Spicy Curry House",
+    "type": ["Indian", "Curry"],
+    "description": "Serving authentic Indian curry dishes",
+    "address": "101 Pine Street",
+    "rating": 4.3,
+    "dishes": [
+      {
+        "id": "1",
+        "name": "Chicken Tikka Masala",
+        "price": 13.99
+      },
+      {
+        "id": "2",
+        "name": "Vegetable Biryani",
+        "price": 11.99
+      }
+    ],
+    "photos": ["assets/img/food.jpg"]
+  },
+  {
+    "id": "5",
+    "name": "Fiesta Mexicana",
+    "type": ["Mexican"],
+    "description": "Authentic Mexican cuisine and margaritas",
+    "address": "202 Maple Street",
+    "rating": 4.6,
+    "dishes": [
+      {
+        "id": "1",
+        "name": "Tacos al Pastor",
+        "price": 8.99
+      },
+      {
+        "id": "2",
+        "name": "Enchiladas Suizas",
+        "price": 10.99
+      }
+    ],
+    "photos": ["assets/img/food.jpg"]
+  }
+]

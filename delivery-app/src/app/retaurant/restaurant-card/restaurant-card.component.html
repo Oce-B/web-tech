@@ -1,1 +1,19 @@
-<p>restaurant-card works!</p>
+<mat-card class="restaurant-card">
+  <mat-card-header>
+    <mat-card-title class="restaurant-card__title">{{
+      restaurant.name
+    }}</mat-card-title>
+    <mat-card-subtitle>
+      @for (type of restaurant.type; track $index) {
+        <div class="restaurant-card__type">{{ type }}</div>
+      }
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <img class="img-float" src="{{ restaurant.photos[0] }}" />
+      {{ restaurant.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions></mat-card-actions>
+</mat-card>

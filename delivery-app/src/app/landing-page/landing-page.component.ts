@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RestaurantRatingComponent } from '../retaurant/restaurant-rating/restaurant-rating.component';
+import { RestaurantListComponent } from '../retaurant/restaurant-list/restaurant-list.component';
+
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RestaurantRatingComponent],
+  imports: [RestaurantListComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
 })
