@@ -1,10 +1,6 @@
 package food.delivery.entity;
-import food.delivery.entity.DeliveryService;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Data

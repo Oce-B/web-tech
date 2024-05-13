@@ -1,19 +1,25 @@
 package food.delivery.entity;
 
 import jakarta.persistence.*;
-import java.util.HashSet;
+import lombok.*;
 
 @Entity
-public class DeliveryService {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Getter
+@Setter
+@Table(name = "dishes")
+public class Dish {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String serviceType; // e.g., Delivroo, Uber Eats
+    private String description;
+    private double price;
 
     @ManyToOne
     @JoinColumn(name = "restaurant_id")
     private Restaurant restaurant;
-
-    // Getters and Setters
 }
