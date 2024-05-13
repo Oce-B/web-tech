@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/restaurants")
+@CrossOrigin(origins = "http://localhost:4200/", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, allowedHeaders = {"Authorization"})
 public class RestaurantController {
     @Autowired
     private RestaurantService restaurantService;

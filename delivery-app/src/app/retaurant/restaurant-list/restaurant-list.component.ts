@@ -19,25 +19,13 @@ export class RestaurantListComponent {
 
   ngOnInit(): void {
     this.loadRestaurants();
-    console.log(this.restaurants);
   }
 
   loadRestaurants(): void {
     this.http
-      .get<Restaurant[]>('assets/restaurants.json')
-      .subscribe((data: Restaurant[]) => {
-        this.restaurants = data.map(
-          (restaurantData) =>
-            new Restaurant(
-              restaurantData.name,
-              restaurantData.type,
-              restaurantData.description,
-              restaurantData.address,
-              restaurantData.rating,
-              restaurantData.dishes,
-              restaurantData.photos,
-            ),
-        );
+      .get('http://localhost:8080/restaurants')
+      .subscribe((data: any) => {
+        console.log(data);
       });
   }
 }
