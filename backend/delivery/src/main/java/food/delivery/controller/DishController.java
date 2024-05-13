@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/dishes")
+@CrossOrigin(origins = "http://localhost:4200/", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, allowedHeaders = {"Authorization"})
 public class DishController {
     @Autowired
     private DishService dishService;
