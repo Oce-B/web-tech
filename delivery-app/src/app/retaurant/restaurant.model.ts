@@ -1,23 +1,26 @@
 import { Dish } from './restaurant-dish/dish.model';
 
 export class Restaurant {
+  id: number;
   name: string;
   type: string[];
   description: string;
   address: string;
   rating: number;
-  dishes: Dish[];
   photos: string[];
+  dishes: Dish[];
 
   constructor(
+    id: number;
     name: string,
     type: string[],
     description: string,
     address: string,
     rating: number,
-    dishes: Dish[],
     photos: string[],
+    dishes: Dish[],
   ) {
+    this.id=id;
     this.name = name;
     this.type = type;
     this.description = description;
