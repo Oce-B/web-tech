@@ -1,7 +1,10 @@
 package food.delivery.entity;
 
+
 import jakarta.persistence.*;
 import lombok.*;
+
+
 
 @Entity
 @Data
@@ -10,6 +13,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
+
 @Table(name = "dishes")
 public class Dish {
     @Id

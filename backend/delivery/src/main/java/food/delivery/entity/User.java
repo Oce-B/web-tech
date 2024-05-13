@@ -2,6 +2,8 @@ package food.delivery.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -9,16 +11,16 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-@Table(name = "restaurants")
-public class Restaurant {
+@Table(name = "user")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Userid;
     private String name;
+    private String surname;
     private String address;
-    private String description;
-    private double rating;
-    private double minimalOrderAmount;
+    private String phoneNumber;
+    private String password;
 
 }
 
