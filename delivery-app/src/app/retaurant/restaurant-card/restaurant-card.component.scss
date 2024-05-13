@@ -47,6 +47,7 @@ $color-green: #b6d83d;
 
 .container {
   border-radius: 30px;
+  min-width: 250px;
   background: #ffffff;
   position: relative;
   margin-bottom: 28px;
@@ -83,4 +84,8 @@ $color-green: #b6d83d;
   margin-right: 30px;
   width: 103px;
   height: 94px;
+}
+
+.container-4 {
+  min-width: 250px;
 }

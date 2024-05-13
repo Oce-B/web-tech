@@ -1,9 +1,10 @@
 import { Dish } from './restaurant-dish/dish.model';
+import { restaurantType } from './restaurantType.model';
 
 export class Restaurant {
   id: number;
   name: string;
-  type: string;
+  type: restaurantType;
   description: string;
   address: string;
   rating: number;
@@ -13,7 +14,7 @@ export class Restaurant {
   constructor(
     id: number,
     name: string,
-    type: string,
+    type: restaurantType,
     description: string,
     address: string,
     rating: number,

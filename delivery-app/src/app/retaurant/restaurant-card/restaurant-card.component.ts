@@ -3,7 +3,6 @@ import { RestaurantRatingComponent } from '../restaurant-rating/restaurant-ratin
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { Restaurant } from '../restaurant.model';
-import { RestaurantService } from '../restaurant.service';
 
 @Component({
   selector: 'app-restaurant-card',
