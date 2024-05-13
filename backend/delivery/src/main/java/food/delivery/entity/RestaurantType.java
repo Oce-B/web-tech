@@ -11,11 +11,10 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-@Table(name = "restaurants_type")
+@Table(name = "restaurant_type")
 public class RestaurantType {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(unique=true)
     private String name;
 
 

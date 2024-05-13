@@ -18,14 +18,13 @@ export class RestaurantListComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.loadRestaurants();
+    this.getallRestaurants().subscribe((restaurants) => {
+      this.restaurants = restaurants;
+      console.log(this.restaurants[0]);
+    });
   }
 
-  loadRestaurants(): void {
-    this.http
-      .get('http://localhost:8080/restaurants')
-      .subscribe((data: any) => {
-        console.log(data);
-      });
+  getallRestaurants(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(`http://localhost:8080/restaurants`);
   }
 }

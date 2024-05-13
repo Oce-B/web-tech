@@ -3,7 +3,7 @@ import { Dish } from './restaurant-dish/dish.model';
 export class Restaurant {
   id: number;
   name: string;
-  type: string[];
+  type: string;
   description: string;
   address: string;
   rating: number;
@@ -13,7 +13,7 @@ export class Restaurant {
   constructor(
     id: number,
     name: string,
-    type: string[],
+    type: string,
     description: string,
     address: string,
     rating: number,

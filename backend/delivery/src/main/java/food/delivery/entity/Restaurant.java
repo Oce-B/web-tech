@@ -20,5 +20,9 @@ public class Restaurant {
     private double rating;
     private double minimalOrderAmount;
 
+    @ManyToOne
+    @JoinColumn(name="restaurant_type")
+    private RestaurantType type;
+
 }
 
