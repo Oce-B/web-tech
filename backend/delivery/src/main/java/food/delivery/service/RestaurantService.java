@@ -15,7 +15,6 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants(){
         return restaurantRepository.findAll();
     }
-
     public void addRestaurant(Restaurant restaurant){
         restaurantRepository.save(restaurant);
     }
@@ -23,7 +22,6 @@ public class RestaurantService {
     public void updateRestaurant(Restaurant restaurant){
         restaurantRepository.save(restaurant);
     }
-
     public void deleteRestaurantById(long id) {
         restaurantRepository.deleteById(id);
     }
