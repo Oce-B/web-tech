@@ -11,8 +11,8 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-@Table(name = "food_types")
-public class FoodType {
+@Table(name = "restaurants_type")
+public class RestaurantType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

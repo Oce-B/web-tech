@@ -11,7 +11,7 @@ export class Restaurant {
   dishes: Dish[];
 
   constructor(
-    id: number;
+    id: number,
     name: string,
     type: string[],
     description: string,
@@ -20,7 +20,7 @@ export class Restaurant {
     photos: string[],
     dishes: Dish[],
   ) {
-    this.id=id;
+    this.id = id;
     this.name = name;
     this.type = type;
     this.description = description;
