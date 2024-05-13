@@ -1,0 +1,13 @@
+@import url("../../assets/styles/variables.scss");
+
+$color-green: #b6d83d;
+
+.button__rounded--black {
+  background-color: black !important;
+  color: $color-green !important;
+  margin: 5px;
+  s &:hover {
+    background-color: $color-green;
+    color: black;
+  }
+}

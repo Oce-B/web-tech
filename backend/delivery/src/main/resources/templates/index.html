@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant List</title>
+    <style>
+        #restaurant-list li {
+            cursor: pointer;
+            color: blue;
+            margin-bottom: 5px;
+        }
+        #restaurant-list li:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>Restaurant List</h1>
+<ul id="restaurant-list"></ul>
+
+<!-- Container for displaying dishes -->
+<div id="dish-list-container" style="margin-top: 20px;">
+    <h2>Dishes</h2>
+    <ul id="dish-list"></ul>
+</div>
+
+<script>
+    async function fetchRestaurants() {
+        try {
+            const response = await fetch('/restaurants'); // Assuming your backend is running on the same host
+            const restaurants = await response.json();
+            return restaurants;
+        } catch (error) {
+            console.error('Error fetching restaurants:', error);
+            return [];
+        }
+    }
+    async function fetchDishes(restaurantId) {
+        try {
+            const response = await fetch(`/restaurants/${restaurantId}/dishes`); // Fetch dishes from backend
+            const dishes = await response.json();
+            return dishes;
+        } catch (error) {
+            console.error('Error fetching dishes:', error);
+            return [];
+        }
+    }
+    async function renderDishes(restaurantId) {
+        const dishList = document.getElementById('dish-list');
+        dishList.innerHTML = ''; // Clear previous dishes
+        const dishes = await fetchDishes(restaurantId);
+
+        dishes.forEach(dish => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${dish.name} - ${dish.description} - $${dish.price}`;
+            dishList.appendChild(listItem);
+        });
+    }
+    async function renderRestaurants() {
+        const restaurantList = document.getElementById('restaurant-list');
+        const restaurants = await fetchRestaurants();
+
+        restaurants.forEach(restaurant => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${restaurant.name} - ${restaurant.address}`;
+            listItem.onclick = () => renderDishes(restaurant.id);
+            restaurantList.appendChild(listItem);
+        });
+    }
+
+    window.onload = renderRestaurants;
+</script>
+</body>
+</html>
