@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Restaurant } from './restaurant.model';
+import {Dish} from "./dish.model";
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +23,10 @@ export class RestaurantService {
 
   getRestaurant(id: string): Observable<Restaurant> {
     return this.http.get<Restaurant>(`${this.apiUrl}/restaurants/${id}`);
+  }
+
+  getDishesByRestaurantId(id: string): Observable<Dish[]> {
+    return this.http.get<Dish[]>(`${this.apiUrl}/restaurants/${id}/dishes`);
   }
 
   updateRestaurant(id: string, restaurant: Restaurant): Observable<any> {
