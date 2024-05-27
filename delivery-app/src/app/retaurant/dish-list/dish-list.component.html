@@ -1,0 +1,7 @@
+<div class="dish-list">
+  <h1>{{ restaurantName }}</h1> <!-- Displaying the restaurant name -->
+  <app-dish-card
+    *ngFor="let dish of dishes"
+    [dish]="dish"
+  ></app-dish-card>
+</div>

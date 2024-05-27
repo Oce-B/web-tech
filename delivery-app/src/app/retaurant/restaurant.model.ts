@@ -1,4 +1,4 @@
-import { Dish } from './restaurant-dish/dish.model';
+import { Dish } from './dish.model';
 import { restaurantType } from './restaurantType.model';
 
 export class Restaurant {

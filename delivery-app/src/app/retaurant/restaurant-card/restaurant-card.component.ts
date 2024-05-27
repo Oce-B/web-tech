@@ -3,6 +3,7 @@ import { RestaurantRatingComponent } from '../restaurant-rating/restaurant-ratin
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { Restaurant } from '../restaurant.model';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-restaurant-card',
@@ -14,5 +15,9 @@ import { Restaurant } from '../restaurant.model';
 export class RestaurantCardComponent {
   @Input() restaurant!: Restaurant;
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  viewDishes() {
+    this.router.navigate([`/restaurants/${this.restaurant.id}/dishes`]);
+  }
 }

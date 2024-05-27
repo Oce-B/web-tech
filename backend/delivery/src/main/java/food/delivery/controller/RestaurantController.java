@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/restaurants")
@@ -40,6 +41,13 @@ public class RestaurantController {
     public ResponseEntity<Void> addRestaurant(@RequestBody Restaurant restaurant) {
         restaurantService.addRestaurant(restaurant);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Restaurant> getRestaurantById(@PathVariable long id) {
+        Optional<Restaurant> restaurant = restaurantService.getRestaurantById(id);
+        return restaurant.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PutMapping("/{id}")
