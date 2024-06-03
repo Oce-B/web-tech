@@ -1,4 +1,5 @@
 <div class="restaurant-list">
+  <button mat-button  (click)="openAddRestaurantForm()" class="buttonable__type">Add New Restaurant</button>
   <app-restaurant-card
     *ngFor="let restaurant of restaurants; trackBy: trackByFn"
     [restaurant]="restaurant"
