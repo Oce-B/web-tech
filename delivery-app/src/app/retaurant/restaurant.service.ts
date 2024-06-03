@@ -9,31 +9,32 @@ import {Dish} from "./dish.model";
   providedIn: 'root',
 })
 export class RestaurantService {
-  private apiUrl = 'http://localhost:8080/';
+  private apiUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) {}
 
-  createRestaurant(restaurant: Restaurant): Observable<Restaurant> {
+ createRestaurant(restaurant: Restaurant): Observable<Restaurant> {
     return this.http.post<Restaurant>(`${this.apiUrl}/restaurants`, restaurant);
   }
 
   getRestaurants(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(`${this.apiUrl}/restaurants`);
+    return this.http.get<Restaurant[]>(`${this.apiUrl}restaurants`);
   }
 
   getRestaurant(id: string): Observable<Restaurant> {
-    return this.http.get<Restaurant>(`${this.apiUrl}/restaurants/${id}`);
+    return this.http.get<Restaurant>(`${this.apiUrl}restaurants/${id}`);
   }
 
   getDishesByRestaurantId(id: string): Observable<Dish[]> {
-    return this.http.get<Dish[]>(`${this.apiUrl}/restaurants/${id}/dishes`);
+    return this.http.get<Dish[]>(`${this.apiUrl}restaurants/${id}/dishes`);
   }
 
   updateRestaurant(id: string, restaurant: Restaurant): Observable<any> {
-    return this.http.put(`${this.apiUrl}/restaurants/${id}`, restaurant);
+    return this.http.put(`${this.apiUrl}restaurants/${id}`, restaurant);
   }
 
   deleteRestaurant(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/restaurants/${id}`);
+    return this.http.delete(`${this.apiUrl}restaurants/${id}`);
   }
+
 }

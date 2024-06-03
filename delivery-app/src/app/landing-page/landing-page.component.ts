@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
 import { RestaurantListComponent } from '../retaurant/restaurant-list/restaurant-list.component';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RestaurantListComponent],
+  imports: [RestaurantListComponent, RouterModule],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss',
+  styleUrls: ['./landing-page.component.scss'],
 })
-export class LandingPageComponent {}
+export class LandingPageComponent {
+  constructor(private router: Router) {}
+
+  navigateToRestaurants(): void {
+    this.router.navigate(['/restaurants']);
+  }
+}
