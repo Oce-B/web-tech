@@ -5,7 +5,8 @@ $color-green: #b6d83d;
 .button__rounded--black {
   background-color: black !important;
   color: $color-green !important;
-  margin: 5px;
+  padding: 10px 20px;
+  margin: 20px;
   s &:hover {
     background-color: $color-green;
     color: black;
