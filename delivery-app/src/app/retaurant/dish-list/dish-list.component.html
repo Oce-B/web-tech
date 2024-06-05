@@ -1,7 +1,9 @@
 <div class="dish-list">
-  <h1>{{ restaurantName }}</h1> <!-- Displaying the restaurant name -->
+  <h1>{{ restaurantName }}</h1>
+  <button mat-button  (click)="openAddDishForm()" class="buttonable__type">Add New Dish</button>
   <app-dish-card
     *ngFor="let dish of dishes"
     [dish]="dish"
+    [restaurantId]="restaurantId"
   ></app-dish-card>
 </div>

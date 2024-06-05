@@ -1,0 +1,36 @@
+$color-green: #b6d83d;
+.buttonable{
+  max-width: 650px;
+  max-height: 450px;
+  border-radius: 15px;
+  min-width: 250px;
+  min-height: 200px;
+  margin: 10px;
+  &__title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: normal;
+
+    text-transform: uppercase;
+    margin-bottom: 2%;
+  }
+  img {
+    width: 40%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 20px;
+    float: left;
+    padding: 2%;
+    left: 0;
+  }
+
+  &__type {
+    float: right;
+    margin: 2%;
+    padding: 1%;
+    border-radius: 50px;
+    color: white;
+    background-color: $color-green;
+  }}

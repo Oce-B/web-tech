@@ -37,6 +37,19 @@ public class RestaurantController {
         return new ResponseEntity<>(dishes, HttpStatus.OK);
     }
 
+    @PostMapping("/{id}/dishes")
+    public ResponseEntity<Dish> addDishToRestaurant(@PathVariable long id, @RequestBody Dish dish) {
+        Optional<Restaurant> restaurantOptional = restaurantService.getRestaurantById(id);
+        if (!restaurantOptional.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        Restaurant restaurant = restaurantOptional.get();
+        dish.setRestaurant(restaurant);
+
+        Dish createdDish = dishService.addDish(dish);
+        return new ResponseEntity<>(createdDish, HttpStatus.CREATED);
+    }
     @PostMapping
     public ResponseEntity<Void> addRestaurant(@RequestBody Restaurant restaurant) {
         restaurantService.addRestaurant(restaurant);

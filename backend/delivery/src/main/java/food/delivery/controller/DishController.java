@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/dishes")
@@ -20,6 +21,13 @@ public class DishController {
     public ResponseEntity<List<Dish>> getAllDishes() {
         List<Dish> dishes = dishService.getAllDishes();
         return new ResponseEntity<>(dishes, HttpStatus.OK);
+    }
+
+    @GetMapping("/{dishId}")
+    public ResponseEntity<Dish> getDishById(@PathVariable Long dishId) {
+        Optional<Dish> dish = dishService.getDishById(dishId);
+        return dish.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping
