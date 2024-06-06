@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl, FormArray, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Dish } from '../dish.model';
@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import {CartService} from "../../cart.service";
 
 @Component({
   selector: 'app-dish-view',
@@ -29,13 +30,13 @@ export class DishViewComponent implements OnInit {
   dishId!: string;
   dish!: Dish;
   orderForm!: FormGroup;
-  utensilOptions: string[] = ['Fork', 'Spoon', 'Knife'];
 
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -49,7 +50,7 @@ export class DishViewComponent implements OnInit {
 
     this.orderForm = this.fb.group({
       quantity: [1, [Validators.required, Validators.min(1)]],
-      extraUtensils: this.fb.array(this.utensilOptions.map(() => false))
+      utensils: [false]
     });
   }
 
@@ -63,18 +64,15 @@ export class DishViewComponent implements OnInit {
     });
   }
 
-  get extraUtensils(): FormArray {
-    return this.orderForm.get('extraUtensils') as FormArray;
-  }
-
   addToCart(): void {
     if (this.orderForm.valid) {
       const orderDetails = {
         dish: this.dish,
-        quantity: this.orderForm.value.quantity,
-        extraUtensils: this.utensilOptions.filter((_, i) => this.orderForm.value.extraUtensils[i])
+        ...this.orderForm.value
       };
+      this.cartService.addToCart(orderDetails);
       console.log('Order Details:', orderDetails);
+      this.router.navigate(['/cart']);
     }
   }
 }
