@@ -1,0 +1,25 @@
+<mat-dialog-content>
+  <form [formGroup]="addRestaurantForm" (ngSubmit)="submitForm()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput formControlName="type">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput formControlName="address">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Rating</mat-label>
+      <input matInput formControlName="rating" type="number">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</mat-dialog-content>
