@@ -1,0 +1,24 @@
+<div class="dish-view-container" *ngIf="dish">
+  <mat-card class="dish-card">
+    <mat-card-header>
+      <mat-card-title>{{ dish.name }}</mat-card-title>
+      <mat-card-subtitle>{{ dish.description }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="'assets/img/default-dish.webp'" alt="{{ dish.name }}">
+    <mat-card-content>
+      <p>Price: {{ dish.price | currency }}</p>
+      <form [formGroup]="orderForm" (ngSubmit)="addToCart()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Quantity</mat-label>
+          <input matInput formControlName="quantity" type="number" min="1">
+        </mat-form-field>
+
+        <div class="utensils-options">
+          <mat-checkbox formControlName="utensils">Include Utensils</mat-checkbox>
+        </div>
+
+        <button mat-raised-button color="primary" type="submit" class="full-width">Add to Cart</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
