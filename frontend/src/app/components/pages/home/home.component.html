@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row header" *ngIf="query">
+    <div class="col">
+      <h1>Searching for "{{ query }}" - {{ itemsCount }} results found</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col searchbox">
+      <app-searchbox></app-searchbox>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="!query">
+    <div class="col">
+      <app-tags></app-tags>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-not-found
+        [isVisible]="!foods || !foods.length"
+        resetText="Reset search"
+      ></app-not-found>
+
+      <ul class="my-4">
+        <li *ngFor="let food of foods" class="border-light">
+          <app-food-item [food]="food"></app-food-item>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-pagination
+        *ngIf="itemsCount > pageSize"
+        [slice]="slice"
+        [itemsCount]="itemsCount"
+      ></app-pagination>
+    </div>
+  </div>
+</div>

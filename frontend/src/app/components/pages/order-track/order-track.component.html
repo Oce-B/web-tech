@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row header" *ngIf="order">
+    <div class="col">
+      <h1>Order #{{ order.id }}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <div class="content" *ngIf="order">
+        <div class="details">
+          <div>
+            <strong>Date: </strong> {{ order.createdAt | date: "medium" }}
+          </div>
+          <div><strong>Name: </strong> {{ order.name }}</div>
+          <div><strong>Address: </strong> {{ order.address }}</div>
+          <div><strong>Status: </strong> {{ order.status }}</div>
+          <div *ngIf="order.paymentId">
+            <strong>Payment ID: </strong> {{ order.paymentId }}
+          </div>
+        </div>
+
+        <div>
+          <h3>Shipping Address:</h3>
+
+          <app-map [order]="order" [readonly]="true"></app-map>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-8" *ngIf="order">
+      <app-order-items-list [order]="order"></app-order-items-list>
+
+      <div class="buttons" *ngIf="order.status != 'NEW'">
+        <button class="btn btn-outline-primary btn-lg" (click)="print()">
+          Print order
+        </button>
+        <button class="btn btn-primary btn-lg" routerLink="/foods/page/1">
+          Continue shopping
+        </button>
+      </div>
+
+      <div class="buttons" *ngIf="order.status == 'NEW'">
+        <button class="btn btn-success btn-lg" routerLink="/checkout">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

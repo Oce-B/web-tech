@@ -1,0 +1,29 @@
+.header {
+  margin: 3rem auto;
+}
+
+.actions {
+  margin-bottom: 7rem;
+}
+
+.actions .col {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions button {
+  margin-right: 4rem;
+}
+
+.content {
+  margin-bottom: 2rem;
+}
+
+.thumb {
+  max-height: 80px;
+}
+
+.form-select {
+  max-width: 60px;
+  margin: 0 2rem;
+}
