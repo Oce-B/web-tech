@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row header">
+    <div class="col">
+      <h1>Order Summary</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-8">
+      <app-order-items-list [order]="order"></app-order-items-list>
+
+      <div class="row">
+        <div class="col actions">
+          <button class="btn btn-success btn-lg" (click)="createOrder()">
+            <i class="fa-brands fa-paypal"></i>
+            Go To Payment
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="mb-3">
+        <h2>
+          Name: <span> {{ user.name }} </span>
+        </h2>
+        <h4>Address: {{ user.address }}</h4>
+      </div>
+
+      <div class="map">
+        <h5>Choose delivery address</h5>
+        <app-map [order]="order"></app-map>
+      </div>
+    </div>
+  </div>
+</div>
