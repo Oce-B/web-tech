@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { RestaurantListComponent } from './retaurant/restaurant-list/restaurant-list.component';
 import {MatToolbar} from "@angular/material/toolbar";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
